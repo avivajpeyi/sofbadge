@@ -28,3 +28,16 @@ jobs:
         with:
           name: screenshots
           path: '*.png'
+
+  deploy-to-gh-pages:
+    needs: [fanatic]  # Wait for the 'fanatic' job to complete
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact-directory: screenshots
+
+
