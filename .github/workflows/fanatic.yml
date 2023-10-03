@@ -32,6 +32,8 @@ jobs:
   deploy-to-gh-pages:
     needs: [fanatic]  # Wait for the 'fanatic' job to complete
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Corrected indentation
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
@@ -39,5 +41,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifact-directory: screenshots
-
-
