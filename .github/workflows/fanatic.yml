@@ -10,6 +10,8 @@ on:
 jobs:
   fanatic:
     runs-on: ubuntu-20.04
+    permissions:
+      id-token: write  
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -28,16 +30,8 @@ jobs:
         with:
           name: screenshots
           path: '*.png'
-
-  deploy-to-gh-pages:
-    needs: [fanatic]  # Wait for the 'fanatic' job to complete
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write  # Corrected indentation
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact-directory: screenshots
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./screenshots  # Specify the directory containing your images
