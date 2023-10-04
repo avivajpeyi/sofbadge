@@ -29,8 +29,17 @@ jobs:
         with:
           name: screenshots
           path: '*.png'
+          
+      - name: Download artifact from build
+        uses: bettermarks/action-artifact-download@0.3.0
+        with:
+          repo: organization/the-repo-to-use
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: screenshots
+          wait_seconds: 60 
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./screenshots
