@@ -4,6 +4,9 @@
 [![Tests](https://github.com/connorads/stackoverflow-fanatic/actions/workflows/ci.yml/badge.svg)](https://github.com/connorads/stackoverflow-fanatic/actions/workflows/ci.yml)
 [![MIT License](https://img.shields.io/github/license/connorads/stackoverflow-fanatic)](https://github.com/connorads/stackoverflow-fanatic/blob/master/LICENSE)
 
+[![](https://avivajpeyi.github.io/sofbadge/progress.png)](https://stackoverflow.com/help/badges/83/?userid=10177759)
+
+
 Earn Stack Overflow's [Fanatic Badge](https://stackoverflow.com/help/badges/83/fanatic) automagically using GitHub Actions 🏆
 
 > Fanatic: Visit the site each day for 100 consecutive days. (Days are counted in UTC.).
