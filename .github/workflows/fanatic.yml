@@ -10,8 +10,7 @@ on:
 jobs:
   fanatic:
     runs-on: ubuntu-20.04
-    permissions:
-      id-token: write  
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
